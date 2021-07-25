@@ -5,6 +5,9 @@
   "repository": "git@github.com:kihyuk-sung/refactoring.git",
   "author": "K <kihyuk.sung@outlook.kr>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "jest": "^27.0.6"
   }
