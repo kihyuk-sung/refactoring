@@ -1,0 +1,11 @@
+{
+  "name": "refactoring",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kihyuk-sung/refactoring.git",
+  "author": "K <kihyuk.sung@outlook.kr>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
