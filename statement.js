@@ -9,15 +9,14 @@ function statement(invoice, plays) {
   }).format;
 
   for (let perf of invoice.performances) {
-    const play = plays[perf.playID];
-    let thisAmount = amountFor(perf, play);
+    let thisAmount = amountFor(perf, playFor(perf, plays));
 
     // 포인트를 적립한다.
     volumeCredits += Math.max(perf.audience - 30, 0);
-    if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience / 5);
+    if ("comedy" === playFor(perf, plays).type) volumeCredits += Math.floor(perf.audience / 5);
 
     // 청구 내역을 출력한다.
-    result += `  ${play.name}: ${format(thisAmount / 100)} (${perf.audience}석)\n`;
+    result += `  ${playFor(perf, plays).name}: ${format(thisAmount / 100)} (${perf.audience}석)\n`;
     totalAmount += thisAmount;
   }
 
@@ -48,6 +47,10 @@ function amountFor(aPerformance, play) {
   }
 
   return result;
+}
+
+function playFor(aPerformance, plays) {
+  return plays[aPerformance.playID];
 }
 
 module.exports = statement;
