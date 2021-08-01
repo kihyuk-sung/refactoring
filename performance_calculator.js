@@ -9,11 +9,7 @@ class PerformanceCalculator {
   
     switch (this.play.type) {
       case "tragedy":
-        result = 40000;
-        if (this.performance.audience > 30) {
-          result += 1000 * (this.performance.audience - 30);
-        }
-        break;
+        throw '오류 발생';
       case "comedy":
         result = 30000;
         if (this.performance.audience > 20) {
